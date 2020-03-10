@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using ToDoList.Models;
 
 namespace ToDoList.Controllers
@@ -9,7 +10,6 @@ namespace ToDoList.Controllers
     [HttpGet("/")]
     public ActionResult Index()
     {
-      Item starterItem = new Item("Add first item to To Do List");
       return View();
     }
 

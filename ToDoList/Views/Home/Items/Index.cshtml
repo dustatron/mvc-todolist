@@ -6,8 +6,10 @@
 <h3><a href='/categories'>View categories</a></h3>
 <h3><a href='/categories/new'>Add a new category</a></h3>
  *@
+@using ToDoList.Models;
+<div class="container">
 
-<h1>To Do List</h1>
-<ul>
-  <li>@Model.Description</li>
-</ul>
+  <h1>To Do List</h1>
+  <a href='/items/new'>Add a new item</a>
+  <a href='/items'>See list of items</a>
+</div>
