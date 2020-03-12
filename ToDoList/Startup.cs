@@ -26,7 +26,6 @@ namespace ToDoList
     public void Configure(IApplicationBuilder app)
     {
       app.UseStaticFiles();
-
       app.UseDeveloperExceptionPage();
 
       app.UseMvc(routes =>

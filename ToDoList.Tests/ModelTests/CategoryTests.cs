@@ -33,13 +33,14 @@ namespace ToDoList.Tests
 
       //Assert
       Assert.AreEqual(name, result);
+
     }
 
     [TestMethod]
     public void GetId_ReturnsCategoryId_Int()
     {
       //Arrange
-      string name = "Test Category";
+      String name = "Test Category";
       Category newCategory = new Category(name);
 
       //Act
@@ -64,6 +65,7 @@ namespace ToDoList.Tests
 
       //Assert
       CollectionAssert.AreEqual(newList, result);
+
     }
 
     [TestMethod]
@@ -74,6 +76,7 @@ namespace ToDoList.Tests
       string name02 = "School";
       Category newCategory1 = new Category(name01);
       Category newCategory2 = new Category(name02);
+      List<Category> newList = new List<Category> { newCategory1, newCategory2 };
 
       //Act
       Category result = Category.Find(2);
@@ -86,7 +89,7 @@ namespace ToDoList.Tests
     public void AddItem_AssociatesItemWithCategory_ItemList()
     {
       //Arrange
-      string description = "Walk the dog.";
+      string description = "Walk the dog";
       Item newItem = new Item(description);
       List<Item> newList = new List<Item> { newItem };
       string name = "Work";
@@ -99,5 +102,7 @@ namespace ToDoList.Tests
       //Assert
       CollectionAssert.AreEqual(newList, result);
     }
+
+
   }
 }
