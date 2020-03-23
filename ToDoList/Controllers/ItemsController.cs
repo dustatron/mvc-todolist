@@ -83,20 +83,11 @@ namespace ToDoList.Controllers
       return RedirectToAction("Index");
     }
 
-    public ActionResult AddCategory(int id)
-    {
-      var thisItem = _db.Items.FirstOrDefault(items => items.ItemId == id);
-      ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
-      return View(thisItem);
-    }
-
     [HttpPost]
-    public ActionResult AddCategory(Item item, int CategoryId)
+    public ActionResult DeleteCategory(int joinId)
     {
-      if (CategoryId != 0)
-      {
-        _db.CategoryItem.Add(new CategoryItem() { CategoryId = CategoryId, ItemId = item.ItemId });
-      }
+      var joinEntry = _db.CategoryItem.FirstOrDefault(entry => entry.CategoryItemId == joinId);
+      _db.CategoryItem.Remove(joinEntry);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
