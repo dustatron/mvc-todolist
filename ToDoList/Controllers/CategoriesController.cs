@@ -17,7 +17,8 @@ namespace ToDoList.Controllers
 
     public ActionResult Index()
     {
-      return View(_db.Items.ToList());
+      List<Category> model = _db.Categories.ToList();
+      return View(model);
     }
 
     public ActionResult Create()
